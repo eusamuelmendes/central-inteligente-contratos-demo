@@ -14,3 +14,16 @@ $('#approve-btn').onclick=()=>{toast('Contrato aprovado e registrado na auditori
 $('#search').oninput=e=>{$$('#history-body tr').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(e.target.value.toLowerCase())?'':'none')};
 $('#clear-filters').onclick=()=>{$$('#reports select').forEach(s=>s.selectedIndex=0);toast('Filtros limpos. Exibindo todos os contratos.')};$('#print-report').onclick=()=>{toast('Relatório preparado para download.');window.print()};$('#export-report').onclick=()=>toast('CSV de relatórios gerado no modo demonstração.');
 renderActivities();renderFields();renderHistory();
+const sbtContacts=['Plínio Ferreira','Deisi Santos','Edson Ruiz','Helis Almeida'];
+const demoContractDatabase=[
+  {id:'PI-2026-0841',contact:'Plínio Ferreira',company:'Varejo Horizonte',branch:'Varejo',type:'PI / mídia',status:'Enviado',grossValue:184500},
+  {id:'PI-2026-0842',contact:'Deisi Santos',company:'Instituto Rondon',branch:'Educação',type:'Institucional',status:'Aprovado',grossValue:121700},
+  {id:'PI-2026-0838',contact:'Edson Ruiz',company:'Techvale S.A.',branch:'Tecnologia',type:'Patrocínio',status:'Em conferência',grossValue:78300},
+  {id:'PI-2026-0836',contact:'Helis Almeida',company:'Grupo Norte',branch:'Serviços',type:'Permuta',status:'Com erro',grossValue:43500}
+];
+window.centralContratosDemo={contacts:sbtContacts,contracts:demoContractDatabase};
+const contactFilter=[...document.querySelectorAll('#reports select')][1];
+if(contactFilter){contactFilter.innerHTML='<option>Todos os contatos</option>'+sbtContacts.map(name=>`<option>${name}</option>`).join('')}
+const reportRows=document.querySelectorAll('#reports .report-table tbody tr');
+const reportData=[['Plínio Ferreira','Carteira comercial','21','95%','R$ 184.500','3,1%'],['Deisi Santos','Novos negócios','14','93%','R$ 121.700','4,2%'],['Edson Ruiz','Contas estratégicas','09','89%','R$ 78.300','7,1%'],['Helis Almeida','Relacionamento','05','86%','R$ 43.500','8,4%']];
+reportRows.forEach((row,index)=>{const item=reportData[index];if(!item)return;row.innerHTML=`<td><strong>${item[0]}</strong><span class="table-muted">${item[1]}</span></td><td>${item[2]}</td><td><span class="report-positive">${item[3]}</span></td><td>${item[4]}</td><td>${item[5]}</td>`});
