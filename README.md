@@ -1,6 +1,6 @@
 # Central Inteligente de Contratos
 
-Interface demonstrativa para o fluxo de OPEC: receber documento, processar, conferir, aprovar e registrar o envio. Inclui uma carteira comercial e acompanhamento de pendências de faturamento.
+Interface demonstrativa para o fluxo de OPEC: receber documento, processar, conferir, aprovar e registrar o envio. Inclui carteira comercial, pendências de faturamento e painéis financeiros e de metas.
 
 ## Executar
 
@@ -14,7 +14,9 @@ Na tela **Carteira comercial**, é possível cadastrar oportunidades ilustrativa
 
 Na seção **Pendências de faturamento**, é possível cadastrar e editar casos em espera, notas fiscais rejeitadas, pagamentos em atraso e contratos cancelados; definir responsável, motivo, próxima ação e prazo; e marcar casos como resolvidos. Status do contrato, da nota fiscal e do pagamento não devem ser tratados como uma única informação no backend futuro.
 
-Esses novos registros são salvos em `localStorage` **apenas no navegador e dispositivo atual**. Não existe banco de dados compartilhado, autenticação ou sincronização entre usuários na versão publicada pelo GitHub Pages. Use somente dados ilustrativos. Os valores potenciais das oportunidades não são incluídos nos totais de contratos ou faturamento.
+Em **Relatórios**, há duas abas: **Visão financeira** e **Metas e comparativos**. Os valores são calculados a partir de uma base fixa de contratos inteiramente ilustrativos de janeiro a setembro de 2026. É possível filtrar por mês, contato e, na visão financeira, tipo de contrato; consultar contratado, faturado, recebido, saldo a faturar, composição bruto/líquido, evolução mensal e contratos de origem; exportar CSV e imprimir. A aba de metas compara mês, semestre calendário e ano, além de contatos, clientes e período anterior. As metas podem ser editadas para o recorte selecionado e são salvas apenas no navegador atual. Os resultados podem diferir das imagens conceituais anteriores para manter coerência entre os contratos e os totais.
+
+Os registros da carteira e as metas editadas são salvos em `localStorage` **apenas no navegador e dispositivo atual**. Os contratos dos relatórios são exemplos fixos no código, não lançamentos reais nem registros cadastrados na carteira. Não existe banco de dados compartilhado, autenticação, integração com faturamento ou sincronização entre usuários na versão publicada pelo GitHub Pages. Use somente dados ilustrativos. Os valores potenciais das oportunidades não são incluídos nos totais de contratos ou faturamento.
 
 ## Próxima camada de produção
 
