@@ -1,4 +1,4 @@
-(() => {
+(() => { if (window.DISABLE_DEMO_AUTH) return;
   const accounts = [
     { name:'Plínio Ferreira', username:'plinio.ferreira', role:'Contato comercial', password:'sbt123', canUsers:false },
     { name:'Deisi Santos', username:'deisi.santos', role:'Contato comercial', password:'sbt123', canUsers:false },
