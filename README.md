@@ -1,6 +1,6 @@
 # Central Inteligente de Contratos
 
-Interface funcional de demonstração para o fluxo de OPEC: receber documento, processar, conferir, aprovar e registrar o envio.
+Interface demonstrativa para o fluxo de OPEC: receber documento, processar, conferir, aprovar e registrar o envio. Inclui uma carteira comercial e acompanhamento de pendências de faturamento.
 
 ## Executar
 
@@ -9,6 +9,12 @@ Abra `index.html` diretamente no navegador ou sirva a pasta com qualquer servido
 ## Modo demonstração
 
 Esta entrega implementa a experiência de ponta a ponta no navegador, incluindo upload local, simulação determinística do processamento, validação visual, edição de campos, aprovação e histórico. O lançamento externo não é real.
+
+Na tela **Carteira comercial**, é possível cadastrar oportunidades ilustrativas, alterar responsável, valor potencial, próxima ação e etapa; avançar etapas; consultar oportunidades ganhas ou perdidas; e iniciar a captura de um documento a partir de uma oportunidade ganha. A captura ainda não cria um vínculo persistente com um contrato.
+
+Na seção **Pendências de faturamento**, é possível cadastrar e editar casos em espera, notas fiscais rejeitadas, pagamentos em atraso e contratos cancelados; definir responsável, motivo, próxima ação e prazo; e marcar casos como resolvidos. Status do contrato, da nota fiscal e do pagamento não devem ser tratados como uma única informação no backend futuro.
+
+Esses novos registros são salvos em `localStorage` **apenas no navegador e dispositivo atual**. Não existe banco de dados compartilhado, autenticação ou sincronização entre usuários na versão publicada pelo GitHub Pages. Use somente dados ilustrativos. Os valores potenciais das oportunidades não são incluídos nos totais de contratos ou faturamento.
 
 ## Próxima camada de produção
 
