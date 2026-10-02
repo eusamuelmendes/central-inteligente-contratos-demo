@@ -1,0 +1,2 @@
+body.auth-locked{overflow-y:auto;overflow-x:hidden;min-height:100vh}.auth-screen{min-height:100dvh;height:auto;display:flex;align-items:center;justify-content:center}.auth-card{margin:24px auto}
+@media(max-height:760px){.auth-screen{align-items:flex-start;padding-top:22px;padding-bottom:22px}}
